@@ -54,7 +54,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function TopBar() {
+export default function TopBar(props) {
+    const {
+        searchTerm,
+        handleSearchTermChange,
+    } = props;
+
     return (
         <Box>
             <AppBar position="static">
@@ -74,6 +79,8 @@ export default function TopBar() {
                         <StyledInputBase
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
+                            onChange={handleSearchTermChange}
+                            value={searchTerm}
                         />
                     </Search>
                 </Toolbar>
