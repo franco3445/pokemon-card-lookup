@@ -1,10 +1,13 @@
-import TopBar from '@/app/components/TopBar';
-import { PokemonTCG } from 'pokemon-tcg-sdk-typescript';
 import React, {useEffect} from 'react';
 import { View } from 'react-native';
 
+import CardDisplay from "@/app/components/CardDisplay";
+import TopBar from '@/app/components/TopBar';
+import { search } from '@/app/helpers/search';
+
 export default function Index() {
     const [ searchTerm, setSearchTerm ] = React.useState('');
+    const [ retrievedCards, setRetrievedCards ] = React.useState([]);
 
     const handleSearchTermChange = async function (event) {
         if ( event.target.value != searchTerm ){
@@ -12,18 +15,12 @@ export default function Index() {
         }
     };
 
-    const search =  async function (term) {
-        const query = `name:${term}`;
-        const paramsV2: PokemonTCG.Parameter = { q: query };
-
-        const cards = await PokemonTCG.findCardsByQueries(paramsV2)
-        console.log(cards);
-    };
-
     useEffect(() => {
         if (searchTerm != '') {
             search(searchTerm)
-                .then(r => console.log('search complete'))
+                .then(cards => {
+                    setRetrievedCards(cards);
+                })
                 .catch(err => console.log(err));
         }
     }, [searchTerm]);
@@ -33,6 +30,9 @@ export default function Index() {
             <TopBar
                 searchTerm={searchTerm}
                 handleSearchTermChange={handleSearchTermChange}
+            />
+            <CardDisplay
+                cards={retrievedCards}
             />
         </View>
     );
