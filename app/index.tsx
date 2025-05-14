@@ -26,7 +26,7 @@ export default function Index() {
     }, [searchTerm]);
 
     return (
-        <View>
+        <div style={{overflowY: 'auto', height: '100vh'}}>
             <TopBar
                 searchTerm={searchTerm}
                 handleSearchTermChange={handleSearchTermChange}
@@ -34,6 +34,6 @@ export default function Index() {
             <CardDisplay
                 cards={retrievedCards}
             />
-        </View>
+        </div>
     );
 }
