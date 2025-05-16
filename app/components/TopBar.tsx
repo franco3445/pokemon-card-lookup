@@ -10,6 +10,9 @@ import {
     alpha,
     styled,
 } from '@mui/material/styles';
+import { ChangeEventHandler } from 'react';
+
+import LiveSearch from '@/app/components/LiveSearch';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -54,7 +57,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function TopBar(props) {
+type Props = {
+    searchTerm: string;
+    handleSearchTermChange: ChangeEventHandler;
+};
+
+export default function TopBar(props: Props) {
     const {
         searchTerm,
         handleSearchTermChange,
@@ -73,14 +81,8 @@ export default function TopBar(props) {
                         Pokemon Card Look Up
                     </Typography>
                     <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                            onChange={handleSearchTermChange}
-                            value={searchTerm}
+                        <LiveSearch
+                            handleSearchTermChange={handleSearchTermChange}
                         />
                     </Search>
                 </Toolbar>
