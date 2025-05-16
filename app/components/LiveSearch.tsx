@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
 import {
     Autocomplete,
     Stack,
     TextField,
 } from '@mui/material';
+import React, {
+    useState,
+    useEffect
+} from 'react';
 
 import { pokemonSearch } from '@/app/helpers/search';
 
