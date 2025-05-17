@@ -10,7 +10,16 @@ import React, {
 
 import { pokemonSearch } from '@/app/helpers/search';
 
-export default function LiveSearch(props) {
+type Props = {
+    handleSearchTermChange: () => void;
+}
+
+type pokemonInformation = {
+    name: string;
+    url: string;
+}
+
+export default function LiveSearch(props: Props) {
     const {
         handleSearchTermChange
     } = props;
@@ -19,7 +28,7 @@ export default function LiveSearch(props) {
     useEffect(() => {
         pokemonSearch()
             .then(results => {
-                setPokemonList(results.results.map(pokemon => pokemon.name));
+                setPokemonList(results.results.map((pokemon: pokemonInformation) => pokemon.name));
             });
     },
     []

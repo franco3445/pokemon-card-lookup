@@ -9,7 +9,13 @@ import {
 } from '@mui/material';
 import * as React from 'react';
 
-export default function CardDisplay(props) {
+import { Card as PokemonCard } from '@/app/types/card';
+
+type Props = {
+    cards: PokemonCard[];
+}
+
+export default function CardDisplay(props: Props) {
     const {
         cards
     } = props;
@@ -23,7 +29,7 @@ export default function CardDisplay(props) {
                 spacing={2}
             >
                 {cards.map((card) => {
-                    const price = card.tcgplayer?.prices?.mid || card.cardmarket?.prices?.averageSellPrice;
+                    const price = card.cardmarket?.prices?.averageSellPrice;
                     return (
                         <Grid item
                               key={`GridItem-${card.id}`} xs={12} sm={6} md={4} lg={2} xl={1}
