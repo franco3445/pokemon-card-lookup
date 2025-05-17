@@ -3,7 +3,7 @@ import React, {useEffect} from 'react';
 import CardDisplay from "@/app/components/CardDisplay";
 import TopBar from '@/app/components/TopBar';
 import { cardSearch } from '@/app/helpers/search';
-import { PokemonCard } from '@/app/Types';
+import { Card as PokemonCard } from '@/app/types/card';
 
 export default function Index() {
     const [ searchTerm, setSearchTerm ] = React.useState('');
