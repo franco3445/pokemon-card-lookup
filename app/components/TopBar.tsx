@@ -29,13 +29,11 @@ const Search = styled('div')(({ theme }) => ({
 }));
 
 type Props = {
-    searchTerm: string;
     handleSearchTermChange: ChangeEventHandler;
 };
 
 export default function TopBar(props: Props) {
     const {
-        searchTerm,
         handleSearchTermChange,
     } = props;
 

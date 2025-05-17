@@ -9,6 +9,7 @@ import React, {
 } from 'react';
 
 import { pokemonSearch } from '@/app/helpers/search';
+import { toUpperCase } from '@/app/helpers/string';
 
 type Props = {
     handleSearchTermChange: () => void;
@@ -28,7 +29,7 @@ export default function LiveSearch(props: Props) {
     useEffect(() => {
         pokemonSearch()
             .then(results => {
-                setPokemonList(results.results.map((pokemon: pokemonInformation) => pokemon.name));
+                setPokemonList(results.results.map((pokemon: pokemonInformation) => toUpperCase(pokemon.name)));
             });
     },
     []

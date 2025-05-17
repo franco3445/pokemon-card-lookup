@@ -25,7 +25,6 @@ export default function Index() {
     return (
         <div style={{overflowY: 'auto', height: '100vh'}}>
             <TopBar
-                searchTerm={searchTerm}
                 handleSearchTermChange={handleSearchTermChange}
             />
             <CardDisplay
