@@ -53,7 +53,24 @@ export default function LiveSearch(props: Props) {
                 }
                 onChange={handleSearchTermChange}
                 noOptionsText={"No Pokemon Found..."}
-                renderInput={(params) => <TextField {...params} label="Search for a Pokemon"/>}
+                renderInput={(params) => <TextField
+                    {...params}
+                    label="Search for a Pokemon"
+                    sx={{
+                        '& .MuiOutlinedInput-root': {
+                            '&.Mui-focused fieldset': {
+                                borderColor: 'black',
+                            },
+                            backgroundColor: 'white',
+                        },
+                        '& label': {
+                            color: 'black',
+                        },
+                        '& label.Mui-focused': {
+                            color: 'black',
+                        },
+                    }}
+                />}
             />
         </Stack>
     )
