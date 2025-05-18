@@ -29,9 +29,7 @@ export default function LiveSearch(props: Props) {
     useEffect(() => {
         pokemonSearch()
             .then(results => {
-                const uniquePokemonNames = results.results.map(
-                    (pokemon: pokemonInformation) => scrubString(pokemon.name)
-                    )
+                const uniquePokemonNames = results.results.map((pokemon: pokemonInformation) => scrubString(pokemon.name))
                     .sort()
                     .filter(function(item, pos, self) {
                     return self.indexOf(item) == pos;

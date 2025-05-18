@@ -2,7 +2,7 @@ import { PokemonTCG } from "pokemon-tcg-sdk-typescript";
 
 export const cardSearch =  async function (term: string) {
     const query = `name:${term}`;
-    const paramsV2: PokemonTCG.Parameter = { q: query };
+    const paramsV2: PokemonTCG.Parameter = { q: query, orderBy: 'name' };
 
     return PokemonTCG.findCardsByQueries(paramsV2)
 };
