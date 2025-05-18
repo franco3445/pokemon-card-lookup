@@ -12,20 +12,13 @@ import { ChangeEventHandler } from 'react';
 
 import LiveSearch from '@/app/components/LiveSearch';
 
-const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(3),
-        width: 'auto',
-    },
+const StyledToolBar = styled(Toolbar)(({theme}) => ({
+    backgroundColor: '#f2c524',
+}));
+
+const StyledTypography = styled(Typography)(({theme}) => ({
+    color: 'black',
+    flexGrow: 1,
 }));
 
 type Props = {
@@ -40,21 +33,17 @@ export default function TopBar(props: Props) {
     return (
         <Box>
             <AppBar position="static">
-                <Toolbar>
-                    <Typography
+                <StyledToolBar>
+                    <StyledTypography
                         variant="h6"
                         noWrap
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
                     >
                         Pokemon Card Look Up
-                    </Typography>
-                    <Search>
-                        <LiveSearch
-                            handleSearchTermChange={handleSearchTermChange}
-                        />
-                    </Search>
-                </Toolbar>
+                    </StyledTypography>
+                    <LiveSearch
+                        handleSearchTermChange={handleSearchTermChange}
+                    />
+                </StyledToolBar>
             </AppBar>
         </Box>
     )

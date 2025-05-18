@@ -42,7 +42,7 @@ export default function LiveSearch(props: Props) {
     []
     )
     return (
-        <Stack sx={{widsdfgsdfgth: 300, margin: "auto"}}>
+        <Stack sx={{width: 300, margin: "auto"}}>
             <Autocomplete
                 id="search_input"
                 getOptionLabel={(pokemon) => pokemon}

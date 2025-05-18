@@ -21,7 +21,7 @@ export default function Index() {
         setLoading(!loading);
     };
 
-    const handleSearchTermChange = async function (event: React.ChangeEvent, value: string): void {
+    const handleSearchTermChange = async function (event: React.ChangeEvent, value: string): Promise<void> {
         handleToggle();
         setSearchTerm(value);
     };
