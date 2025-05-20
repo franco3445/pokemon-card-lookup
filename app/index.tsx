@@ -31,9 +31,9 @@ export default function Index() {
             .then(cards => {
                 console.log(cards);
                 setRetrievedCards(cards);
-                handleClose();
             })
-            .catch(err => console.log(err));
+            .catch(err => console.log(err))
+            .finally(() => handleClose());
     }, [searchTerm]);
 
     return (
