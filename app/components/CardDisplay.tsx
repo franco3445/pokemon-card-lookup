@@ -31,7 +31,9 @@ export default function CardDisplay(props: Props) {
                 sx={{paddingTop: '2em'}}
             >
                 {cards.map((card) => {
-                    const price = card.cardmarket?.prices?.averageSellPrice;
+                    const price = card.tcgplayer?.prices?.normal?.market;
+                    const priceHolo = card.tcgplayer?.prices?.holofoil?.market;
+                    const priceReverseHolo = card.tcgplayer?.prices?.reverseHolofoil?.market;
                     return (
                         <Grid
                             item
@@ -67,7 +69,13 @@ export default function CardDisplay(props: Props) {
                                 />
                                 <CardContent>
                                     <Typography variant="h5" component="div">
-                                        {price}
+                                        Normal: {price}
+                                    </Typography>
+                                    <Typography variant="h5" component="div">
+                                        ReverseHolo: {priceReverseHolo}
+                                    </Typography>
+                                    <Typography variant="h5" component="div">
+                                        Holo: {priceHolo}
                                     </Typography>
                                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                                         {card.artist}
