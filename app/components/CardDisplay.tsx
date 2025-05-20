@@ -1,8 +1,8 @@
 import {
     Box,
     Card,
-    CardActions,
     CardContent,
+    CardHeader,
     CardMedia,
     Grid,
     Typography,
@@ -28,23 +28,34 @@ export default function CardDisplay(props: Props) {
                 justify="space-evenly"
                 alignItems="stretch"
                 spacing={2}
+                sx={{paddingTop: '2em'}}
             >
                 {cards.map((card) => {
                     const price = card.cardmarket?.prices?.averageSellPrice;
                     return (
-                        <Grid item
-                              size={3}
-                              key={`GridItem-${card.id}`} xs={12} sm={6} md={4} lg={2} xl={1}
+                        <Grid
+                            item
+                            size={3}
+                            key={`GridItem-${card.id}`} xs={12} sm={6} md={4} lg={2} xl={1}
                         >
                             <Card
                                 raised
                                 sx={{
+                                    backgroundColor: 'silver',
+                                    border: 15,
+                                    borderColor: 'gray',
+                                    borderRadius: '16px',
                                     maxWidth: 300,
                                     margin: "0 auto",
-                                    padding: "1em",
+                                    paddingLeft: "1em",
+                                    paddingRight: "1em",
                                 }}
                                 key={card.id}
                             >
+                                <CardHeader
+                                    title={card.name}
+                                    subheader={card.set.name}
+                                />
                                 <CardMedia
                                     component="img"
                                     style={{height: "auto"}}
@@ -55,17 +66,13 @@ export default function CardDisplay(props: Props) {
                                     }}
                                 />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        {card.name}
+                                    <Typography variant="h5" component="div">
+                                        {price}
                                     </Typography>
                                     <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                                        {card.set.name}
+                                        {card.artist}
                                     </Typography>
                                 </CardContent>
-                                <CardActions>
-                                    <Typography variant="subtitle1">{card.artist}</Typography>
-                                    <Typography variant="subtitle1">${price}</Typography>
-                                </CardActions>
                             </Card>
                         </Grid>
                     );
