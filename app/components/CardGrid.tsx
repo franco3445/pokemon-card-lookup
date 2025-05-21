@@ -2,13 +2,14 @@ import {
     Box,
     Card,
     CardContent,
-    CardHeader,
     CardMedia,
     Grid,
     Typography,
 } from '@mui/material';
 import * as React from 'react';
 
+import CardDisplay from '@/app/components/CardDisplay';
+import CardFooter from '@/app/components/CardFooter';
 import Header from '@/app/components/Header';
 import { Card as PokemonCard } from '@/app/types/card';
 
@@ -32,9 +33,6 @@ export default function CardGrid(props: Props) {
                 sx={{paddingTop: '2em'}}
             >
                 {cards.map((card) => {
-                    const price = card.tcgplayer?.prices?.normal?.market;
-                    const priceHolo = card.tcgplayer?.prices?.holofoil?.market;
-                    const priceReverseHolo = card.tcgplayer?.prices?.reverseHolofoil?.market;
                     return (
                         <Grid
                             item
@@ -59,35 +57,15 @@ export default function CardGrid(props: Props) {
                                     cardName={card.name}
                                     setName={card.set.name}
                                 />
-                                <a
-                                    href={card.tcgplayer?.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <CardMedia
-                                        component="img"
-                                        style={{height: "auto"}}
-                                        image={card.images.large}
-                                        title={card.name}
-                                        sx={{
-                                            objectFit: "contain",
-                                        }}
-                                    />
-                                </a>
-                                <CardContent>
-                                    <Typography variant="h5" component="div">
-                                        Normal: {price}
-                                    </Typography>
-                                    <Typography variant="h5" component="div">
-                                        ReverseHolo: {priceReverseHolo}
-                                    </Typography>
-                                    <Typography variant="h5" component="div">
-                                        Holo: {priceHolo}
-                                    </Typography>
-                                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                                        {card.artist}
-                                    </Typography>
-                                </CardContent>
+                                <CardDisplay
+                                    cardUrl={card.tcgplayer?.url}
+                                    cardImageUrl={card.images.large}
+                                    cardName={card.name}
+                                />
+                                <CardFooter
+                                    artist={card.artist}
+                                    tcgPlayerPrices={card.tcgplayer}
+                                />
                             </Card>
                         </Grid>
                     );
