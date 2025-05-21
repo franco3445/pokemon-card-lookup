@@ -16,7 +16,7 @@ type Props = {
     cards: PokemonCard[];
 }
 
-export default function CardDisplay(props: Props) {
+export default function CardGrid(props: Props) {
     const {
         cards
     } = props;

@@ -4,7 +4,7 @@ import {
     CircularProgress,
 } from '@mui/material/';
 
-import CardDisplay from "@/app/components/CardDisplay";
+import CardGrid from "@/app/components/CardGrid";
 import TopBar from '@/app/components/TopBar';
 import { cardSearch } from '@/app/helpers/search';
 import { Card as PokemonCard } from '@/app/types/card';
@@ -48,7 +48,7 @@ export default function Index() {
             >
                 <CircularProgress color="inherit" />
             </Backdrop>
-            <CardDisplay
+            <CardGrid
                 cards={retrievedCards}
             />
         </div>
