@@ -1,12 +1,12 @@
 import { PokemonTCG } from "pokemon-tcg-sdk-typescript";
+import { allCards } from '@/app/helpers/allCards'
 
 export const cardSearch =  async function (term: string) {
-    const query = `name:${term}`;
+    const query = `name:"${term}"`;
     const paramsV2: PokemonTCG.Parameter = { q: query, orderBy: 'name' };
 
     return PokemonTCG.findCardsByQueries(paramsV2)
 };
 export const pokemonSearch =  async function () {
-    const json = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0');
-    return await json.json();
+    return allCards;
 };

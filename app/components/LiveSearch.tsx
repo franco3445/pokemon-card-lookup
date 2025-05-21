@@ -9,7 +9,6 @@ import React, {
 } from 'react';
 
 import { pokemonSearch } from '@/app/helpers/search';
-import { scrubString } from '@/app/helpers/string';
 
 type Props = {
     handleSearchTermChange: () => void;
@@ -24,12 +23,12 @@ export default function LiveSearch(props: Props) {
     const {
         handleSearchTermChange
     } = props;
-    const [pokemonList, setPokemonList] = useState([]);
+    const [pokemonList, setPokemonList] = useState<string[]>([]);
 
     useEffect(() => {
         pokemonSearch()
             .then(results => {
-                const uniquePokemonNames = results.results.map((pokemon: pokemonInformation) => scrubString(pokemon.name))
+                const uniquePokemonNames = results.map((pokemonName: string )=> pokemonName)
                     .sort()
                     .filter(function(item, pos, self) {
                     return self.indexOf(item) == pos;
