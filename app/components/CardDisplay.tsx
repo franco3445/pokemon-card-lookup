@@ -58,15 +58,21 @@ export default function CardDisplay(props: Props) {
                                     title={card.name}
                                     subheader={card.set.name}
                                 />
-                                <CardMedia
-                                    component="img"
-                                    style={{height: "auto"}}
-                                    image={card.images.large}
-                                    title={card.name}
-                                    sx={{
-                                        objectFit: "contain",
-                                    }}
-                                />
+                                <a
+                                    href={card.tcgplayer?.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <CardMedia
+                                        component="img"
+                                        style={{height: "auto"}}
+                                        image={card.images.large}
+                                        title={card.name}
+                                        sx={{
+                                            objectFit: "contain",
+                                        }}
+                                    />
+                                </a>
                                 <CardContent>
                                     <Typography variant="h5" component="div">
                                         Normal: {price}
