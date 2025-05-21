@@ -3,6 +3,7 @@ import {
     Card,
     Grid,
 } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import * as React from 'react';
 
 import CardDisplay from '@/app/components/CardDisplay';
@@ -13,6 +14,15 @@ import { Card as PokemonCard } from '@/app/types/card';
 type Props = {
     cards: PokemonCard[];
 }
+
+const StyledCard = styled(Card)(({}) => ({
+    backgroundColor: 'silver',
+    borderRadius: '16px',
+    maxWidth: 300,
+    margin: '0 auto',
+    paddingLeft: '1em',
+    paddingRight: '1em',
+}));
 
 export default function CardGrid(props: Props) {
     const {
@@ -36,18 +46,8 @@ export default function CardGrid(props: Props) {
                             size={3}
                             key={`GridItem-${card.id}`} xs={12} sm={6} md={4} lg={2} xl={1}
                         >
-                            <Card
+                            <StyledCard
                                 raised
-                                sx={{
-                                    backgroundColor: 'silver',
-                                    border: 15,
-                                    borderColor: 'gray',
-                                    borderRadius: '16px',
-                                    maxWidth: 300,
-                                    margin: "0 auto",
-                                    paddingLeft: "1em",
-                                    paddingRight: "1em",
-                                }}
                                 key={card.id}
                             >
                                 <Header
@@ -63,7 +63,7 @@ export default function CardGrid(props: Props) {
                                     artist={card.artist}
                                     tcgPlayerPrices={card.tcgplayer}
                                 />
-                            </Card>
+                            </StyledCard>
                         </Grid>
                     );
                 })}
