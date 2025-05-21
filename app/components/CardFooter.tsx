@@ -19,17 +19,17 @@ export default function CardFooter(props: Props) {
 
     return (
         <CardContent>
-            <Typography variant="h5" component="div">
-                Normal: {tcgPlayerPrices?.prices?.normal?.market}
+            <Typography variant="h6" component="div">
+                Normal: ${tcgPlayerPrices?.prices?.normal?.market}
             </Typography>
-            <Typography variant="h5" component="div">
-                ReverseHolo: {tcgPlayerPrices?.prices?.reverseHolofoil?.market}
+            <Typography variant="h6" component="div">
+                ReverseHolo: ${tcgPlayerPrices?.prices?.reverseHolofoil?.market}
             </Typography>
-            <Typography variant="h5" component="div">
-                Holo: {tcgPlayerPrices?.prices?.holofoil?.market}
+            <Typography variant="h6" component="div">
+                Holo: ${tcgPlayerPrices?.prices?.holofoil?.market}
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {artist}
+                Artist: {artist}
             </Typography>
         </CardContent>
     );
