@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import * as React from 'react';
 
+import Header from '@/app/components/Header';
 import { Card as PokemonCard } from '@/app/types/card';
 
 type Props = {
@@ -54,9 +55,9 @@ export default function CardDisplay(props: Props) {
                                 }}
                                 key={card.id}
                             >
-                                <CardHeader
-                                    title={card.name}
-                                    subheader={card.set.name}
+                                <Header
+                                    cardName={card.name}
+                                    setName={card.set.name}
                                 />
                                 <a
                                     href={card.tcgplayer?.url}
