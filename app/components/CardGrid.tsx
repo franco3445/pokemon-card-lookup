@@ -1,10 +1,7 @@
 import {
     Box,
     Card,
-    CardContent,
-    CardMedia,
     Grid,
-    Typography,
 } from '@mui/material';
 import * as React from 'react';
 
@@ -58,7 +55,7 @@ export default function CardGrid(props: Props) {
                                     setName={card.set.name}
                                 />
                                 <CardDisplay
-                                    cardUrl={card.tcgplayer?.url}
+                                    cardUrl={card.tcgplayer?.url || ''}
                                     cardImageUrl={card.images.large}
                                     cardName={card.name}
                                 />

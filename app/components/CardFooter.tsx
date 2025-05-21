@@ -9,7 +9,7 @@ import type { TCGPlayer } from '@/app/types/tcgplayer';
 type Props = {
     artist: string | undefined;
     tcgPlayerPrices: TCGPlayer | undefined;
-}
+};
 
 export default function CardFooter(props: Props) {
     const {

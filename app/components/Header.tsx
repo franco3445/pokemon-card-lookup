@@ -1,9 +1,9 @@
-import { CardHeader } from "@mui/material";
+import { CardHeader } from '@mui/material';
 
 type Props = {
     cardName: string;
     setName: string;
-}
+};
 
 export default function Header(props: Props) {
     const {

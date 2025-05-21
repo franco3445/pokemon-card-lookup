@@ -1,11 +1,11 @@
-import { CardMedia } from "@mui/material";
+import { CardMedia } from '@mui/material';
 
 
 type Props = {
-    cardUrl: string | undefined;
+    cardUrl: string;
     cardImageUrl: string;
     cardName: string;
-}
+};
 
 export default function CardDisplay(props: Props) {
     const {

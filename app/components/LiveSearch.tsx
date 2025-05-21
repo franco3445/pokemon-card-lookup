@@ -12,12 +12,7 @@ import { pokemonSearch } from '@/app/helpers/search';
 
 type Props = {
     handleSearchTermChange: () => void;
-}
-
-type pokemonInformation = {
-    name: string;
-    url: string;
-}
+};
 
 export default function LiveSearch(props: Props) {
     const {
