@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {
     Backdrop,
+    Box,
     CircularProgress,
 } from '@mui/material/';
 
@@ -37,7 +38,9 @@ export default function Index() {
     }, [searchTerm]);
 
     return (
-        <div style={{overflowY: 'auto', height: '100vh'}}>
+        <Box
+            sx={{ overflow: 'auto' }}
+        >
             <TopBar
                 handleSearchTermChange={handleSearchTermChange}
             />
@@ -51,6 +54,6 @@ export default function Index() {
             <CardGrid
                 cards={retrievedCards}
             />
-        </div>
+        </Box>
     );
 }
