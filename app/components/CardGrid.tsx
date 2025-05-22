@@ -16,7 +16,7 @@ type Props = {
 }
 
 const StyledCard = styled(Card)(({}) => ({
-    backgroundColor: 'silver',
+    backgroundColor: 'white',
     borderRadius: '16px',
     maxWidth: 300,
     margin: '0 auto',
