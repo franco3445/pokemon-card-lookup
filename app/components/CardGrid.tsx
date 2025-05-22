@@ -29,7 +29,7 @@ export default function CardGrid(props: Props) {
         cards
     } = props;
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box>
             <Grid
                 columns={15}
                 container

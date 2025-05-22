@@ -39,7 +39,11 @@ export default function Index() {
 
     return (
         <Box
-            sx={{ overflow: 'auto' }}
+            sx={{
+                backgroundImage: 'url(https://i.imgur.com/AZiePHp.jpeg)',
+                height: '100%',
+                overflow: 'auto',
+        }}
         >
             <TopBar
                 handleSearchTermChange={handleSearchTermChange}
