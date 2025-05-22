@@ -1,5 +1,6 @@
 import {
     CardContent,
+    Grid,
     Typography,
 } from '@mui/material';
 
@@ -25,15 +26,41 @@ export default function CardFooter(props: Props) {
 
     return (
         <CardContent>
-            <Typography variant="h6" component="div">
-                Normal: {normalPrice}
-            </Typography>
-            <Typography variant="h6" component="div">
-                ReverseHolo: {reverseHoloPrice}
-            </Typography>
-            <Typography variant="h6" component="div">
-                Holo: {HoloPrice}
-            </Typography>
+            <Grid
+                columns={3}
+                container
+                direction="row"
+                justifyContent="space-evenly"
+                spacing={2}
+            >
+                <Grid
+                    item
+                    size={1}
+                    key={`normal_price`}
+                >
+                    <Typography variant="h6" component="div">
+                        Normal: {normalPrice}
+                    </Typography>
+                </Grid>
+                <Grid
+                    item
+                    size={1}
+                    key={`rholo_price`}
+                >
+                    <Typography variant="h6" component="div">
+                        R-Holo: {reverseHoloPrice}
+                    </Typography>
+                </Grid>
+                <Grid
+                    item
+                    size={1}
+                    key={`holo_price`}
+                >
+                    <Typography variant="h6" component="div">
+                        Holo: {HoloPrice}
+                    </Typography>
+                </Grid>
+            </Grid>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                 Artist: {artist}
             </Typography>
