@@ -17,14 +17,14 @@ type Props = {
 
 const typeColorMap = {
     Colorless: '#A8A77A',
-    Fire: '#EE8130',
-    Water: '#6390F0',
+    Fire: '#B31B1B',
+    Water: '#8FD9FB',
     Lightning: '#F7D02C',
     Grass: '#7AC74C',
     Fighting: '#EE8130',
     Psychic: '#735797',
-    Dragon: '#6F35FC',
-    Darkness: '#705746',
+    Dragon: '#705746',
+    Darkness: '#353E43',
     Metal: '#B7B7CE',
     Fairy: '#D685AD',
 };
@@ -54,7 +54,7 @@ export default function CardGrid(props: Props) {
                 sx={{paddingTop: '2em'}}
             >
                 {cards.map((card) => {
-                    let cardColor = typeColorMap.Colorless;
+                    let cardColor = 'Colorless';
                     if (card.types) {
                         cardColor = card.types[0];
                     }
