@@ -3,16 +3,28 @@ import {
     Grid,
     Typography,
 } from '@mui/material';
+import { styled } from "@mui/material/styles";
 
 import assignToDollar from '@/app/helpers/format';
 
 import type { TCGPlayer } from '@/app/types/tcgplayer';
 
-
 type Props = {
     artist: string | undefined;
     tcgPlayerPrices: TCGPlayer | undefined;
 };
+
+const BorderedGrid = styled(Grid)(({theme}) => ({
+    '--Grid-borderWidth': '2px',
+    border: 'var(--Grid-borderWidth) solid',
+    borderRadius: '16px',
+    padding: '.5em'
+}));
+
+const CenteredGrid = styled(Grid)(({theme}) => ({
+    display: 'flex',
+    justifyContent: 'center',
+}));
 
 export default function CardFooter(props: Props) {
     const {
@@ -26,41 +38,41 @@ export default function CardFooter(props: Props) {
 
     return (
         <CardContent>
-            <Grid
+            <BorderedGrid
                 columns={3}
                 container
                 direction="row"
                 justifyContent="space-evenly"
-                spacing={2}
+                spacing={1}
             >
-                <Grid
+                <CenteredGrid
                     item
                     size={1}
                     key={`normal_price`}
                 >
-                    <Typography variant="h6" component="div">
+                    <Typography variant="h6" component="div" align="center">
                         Normal: {normalPrice}
                     </Typography>
-                </Grid>
-                <Grid
+                </CenteredGrid>
+                <CenteredGrid
                     item
                     size={1}
                     key={`rholo_price`}
                 >
-                    <Typography variant="h6" component="div">
+                    <Typography variant="h6" component="div" align="center">
                         R-Holo: {reverseHoloPrice}
                     </Typography>
-                </Grid>
-                <Grid
+                </CenteredGrid>
+                <CenteredGrid
                     item
                     size={1}
                     key={`holo_price`}
                 >
-                    <Typography variant="h6" component="div">
+                    <Typography variant="h6" component="div" align="center">
                         Holo: {HoloPrice}
                     </Typography>
-                </Grid>
-            </Grid>
+                </CenteredGrid>
+            </BorderedGrid>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                 Artist: {artist}
             </Typography>
