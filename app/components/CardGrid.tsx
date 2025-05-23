@@ -15,6 +15,20 @@ type Props = {
     cards: PokemonCard[];
 }
 
+const typeColorMap = {
+    Colorless: '#A8A77A',
+    Fire: '#EE8130',
+    Water: '#6390F0',
+    Lightning: '#F7D02C',
+    Grass: '#7AC74C',
+    Fighting: '#EE8130',
+    Psychic: '#735797',
+    Dragon: '#6F35FC',
+    Darkness: '#705746',
+    Metal: '#B7B7CE',
+    Fairy: '#D685AD',
+};
+
 const StyledCard = styled(Card)(({}) => ({
     backgroundColor: 'white',
     borderRadius: '16px',
@@ -40,6 +54,10 @@ export default function CardGrid(props: Props) {
                 sx={{paddingTop: '2em'}}
             >
                 {cards.map((card) => {
+                    let cardColor = typeColorMap.Colorless;
+                    if (card.types) {
+                        cardColor = card.types[0];
+                    }
                     return (
                         <Grid
                             item
@@ -49,6 +67,7 @@ export default function CardGrid(props: Props) {
                             <StyledCard
                                 raised
                                 key={card.id}
+                                sx={{backgroundColor: typeColorMap[cardColor]}}
                             >
                                 <Header
                                     cardName={card.name}

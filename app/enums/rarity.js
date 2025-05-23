@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Rarity = void 0;
+var Rarity;
+(function (Rarity) {
+    Rarity["AmazingRare"] = "Amazing Rare";
+    Rarity["Common"] = "Common";
+    Rarity["Legend"] = "LEGEND";
+    Rarity["Promo"] = "Promo";
+    Rarity["Rare"] = "Rare";
+    Rarity["RareAce"] = "Rare ACE";
+    Rarity["RareBreak"] = "Rare BREAK";
+    Rarity["RareHolo"] = "Rare Holo";
+    Rarity["RareHoloEX"] = "Rare Holo EX";
+    Rarity["RareHoloGX"] = "Rare Holo GX";
+    Rarity["RareHoloLVX"] = "Rare Holo LV.X";
+    Rarity["RareHoloStar"] = "Rare Holo Star";
+    Rarity["RareHoloV"] = "Rare Holo V";
+    Rarity["RareHoloVMAX"] = "Rare Holo VMAX";
+    Rarity["RarePrime"] = "Rare Prime";
+    Rarity["RarePrimeStar"] = "Rare Prism Star";
+    Rarity["RareRainbow"] = "Rare Rainbow";
+    Rarity["RareSecret"] = "Rare Secret";
+    Rarity["RareShining"] = "Rare Shining";
+    Rarity["RareShiny"] = "Rare Shiny";
+    Rarity["RareShinyGX"] = "Rare Shiny GX";
+    Rarity["RareUltra"] = "Rare Ultra";
+    Rarity["Uncommon"] = "Uncommon";
+})(Rarity = exports.Rarity || (exports.Rarity = {}));
+//# sourceMappingURL=rarity.js.map

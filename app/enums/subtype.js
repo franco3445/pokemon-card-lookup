@@ -1,0 +1,32 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Subtype = void 0;
+var Subtype;
+(function (Subtype) {
+    Subtype["Break"] = "BREAK";
+    Subtype["Baby"] = "Baby";
+    Subtype["Basic"] = "Basic";
+    Subtype["EX"] = "EX";
+    Subtype["GX"] = "GX";
+    Subtype["GoldenrodGameCorner"] = "Goldenrod Game Corner";
+    Subtype["Item"] = "Item";
+    Subtype["Legend"] = "LEGEND";
+    Subtype["LevelUp"] = "Level-Up";
+    Subtype["Mega"] = "MEGA";
+    Subtype["PokemonTool"] = "Pok\u00E9mon Tool";
+    Subtype["PokemonToolF"] = "Pok\u00E9mon Tool F";
+    Subtype["Restored"] = "Restored";
+    Subtype["RocketsSecretMachine"] = "Rocket's Secret Machine";
+    Subtype["Special"] = "Special";
+    Subtype["Stadium"] = "Stadium";
+    Subtype["StageOne"] = "Stage 1";
+    Subtype["StageTwo"] = "Stage 2";
+    Subtype["Supporter"] = "Supporter";
+    Subtype["TagTeam"] = "TAG TEAM";
+    Subtype["TechnicalMachine"] = "Technical Machine";
+    Subtype["V"] = "V";
+    Subtype["VMax"] = "VMAX";
+    Subtype["RapidStrike"] = "Rapid Strike";
+    Subtype["SingleStrike"] = "Single Strike";
+})(Subtype = exports.Subtype || (exports.Subtype = {}));
+//# sourceMappingURL=subtype.js.map

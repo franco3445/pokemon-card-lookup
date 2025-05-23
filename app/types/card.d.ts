@@ -1,7 +1,7 @@
 import { Ability } from './ability';
 import { AncientTrait } from './ancientTrait';
 import { Attack } from './attack';
-import { CardMarket } from '/cardmarket'
+import { Cardmarket } from './cardmarket';
 import { Resistance, Weakness } from './stats';
 import { CardImage } from './image';
 import { ILegality } from './legality';
@@ -37,5 +37,5 @@ export interface Card {
     legalities: ILegality;
     images: CardImage;
     tcgplayer?: TCGPlayer;
-    cardmarket?: CardMarket;
+    cardmarket?: Cardmarket;
 }

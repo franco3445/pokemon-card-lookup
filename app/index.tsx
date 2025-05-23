@@ -30,7 +30,6 @@ export default function Index() {
     useEffect(() => {
         cardSearch(searchTerm)
             .then(cards => {
-                console.log(cards);
                 setRetrievedCards(cards);
             })
             .catch(err => console.log(err))
