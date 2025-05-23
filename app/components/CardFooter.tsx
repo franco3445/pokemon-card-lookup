@@ -15,6 +15,7 @@ type Props = {
 };
 
 const BorderedGrid = styled(Grid)(({theme}) => ({
+    backgroundColor: 'white',
     '--Grid-borderWidth': '2px',
     border: 'var(--Grid-borderWidth) solid',
     borderRadius: '16px',
