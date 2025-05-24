@@ -45,7 +45,7 @@ export default function CardGrid(props: Props) {
     return (
         <Box>
             <Grid
-                columns={15}
+                columns={5}
                 container
                 direction="row"
                 justify="space-evenly"
@@ -61,7 +61,7 @@ export default function CardGrid(props: Props) {
                     return (
                         <Grid
                             item
-                            size={3}
+                            size={1}
                             key={`GridItem-${card.id}`} xs={12} sm={6} md={4} lg={2} xl={1}
                         >
                             <StyledCard
