@@ -13,7 +13,7 @@ import { Card as PokemonCard } from '@/app/types/card';
 
 type Props = {
     cards: PokemonCard[];
-}
+};
 
 const typeColorMap = {
     Colorless: '#A8A77A',
@@ -29,7 +29,7 @@ const typeColorMap = {
     Fairy: '#D685AD',
 };
 
-const StyledCard = styled(Card)(({}) => ({
+const StyledCard = styled(Card)(() => ({
     backgroundColor: 'white',
     borderRadius: '16px',
     maxWidth: 300,
@@ -38,36 +38,34 @@ const StyledCard = styled(Card)(({}) => ({
     paddingRight: '1em',
 }));
 
-export default function CardGrid(props: Props) {
-    const {
-        cards
-    } = props;
+export default function CardGrid({ cards }: Props) {
     return (
         <Box>
             <Grid
-                columns={5}
                 container
-                direction="row"
-                justify="space-evenly"
-                alignItems="stretch"
                 spacing={2}
-                sx={{paddingTop: '2em'}}
+                justifyContent="center"
+                alignItems="stretch"
+                sx={{
+                    paddingTop: '2em',
+                    flexWrap: 'wrap',
+                }}
             >
                 {cards.map((card) => {
-                    let cardColor = 'Colorless';
-                    if (card.types) {
-                        cardColor = card.types[0];
-                    }
+                    const cardColor = card.types?.[0] || 'Colorless';
                     return (
                         <Grid
                             item
-                            size={1}
-                            key={`GridItem-${card.id}`} xs={12} sm={6} md={4} lg={2} xl={1}
+                            key={`GridItem-${card.id}`}
+                            xs={12}
+                            sm={6}
+                            md={4}
+                            lg={3}
+                            xl={2.4}
                         >
                             <StyledCard
                                 raised
-                                key={card.id}
-                                sx={{backgroundColor: typeColorMap[cardColor]}}
+                                sx={{ backgroundColor: typeColorMap[cardColor] }}
                             >
                                 <Header
                                     cardName={card.name}
