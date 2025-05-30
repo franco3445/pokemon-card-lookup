@@ -32,7 +32,7 @@ export default function TopBar(props: Props) {
 
     return (
         <Box>
-            <AppBar position="static">
+            <AppBar>
                 <StyledToolBar>
                     <StyledTypography
                         variant="h6"

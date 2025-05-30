@@ -47,7 +47,7 @@ export default function CardGrid({ cards }: Props) {
                 justifyContent="center"
                 alignItems="stretch"
                 sx={{
-                    paddingTop: '2em',
+                    paddingTop: '5em',
                     flexWrap: 'wrap',
                 }}
             >
