@@ -8,11 +8,11 @@ import {
 import CardGrid from "@/app/components/CardGrid";
 import TopBar from '@/app/components/TopBar';
 import { cardSearch } from '@/app/helpers/search';
-import { Card as PokemonCard } from '@/app/types/card';
+import { Card } from '@/app/types/card';
 
 export default function Index() {
     const [ searchTerm, setSearchTerm ] = React.useState('');
-    const [ retrievedCards, setRetrievedCards ] = React.useState<PokemonCard[]>([]);
+    const [ retrievedCards, setRetrievedCards ] = React.useState<Card[]>([]);
     const [loading, setLoading] = React.useState(false);
 
     const handleClose = () => {
