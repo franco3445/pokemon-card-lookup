@@ -10,7 +10,7 @@ import {
 } from '@mui/material/styles';
 import { ChangeEventHandler } from 'react';
 
-import LiveSearch from '@/app/components/LiveSearch';
+import PokemonSearch from '@/app/components/PokemonSearch';
 
 const StyledToolBar = styled(Toolbar)(({theme}) => ({
     backgroundColor: '#f2c524',
@@ -40,7 +40,7 @@ export default function TopBar(props: Props) {
                     >
                         Pokemon Card Look Up
                     </StyledTypography>
-                    <LiveSearch
+                    <PokemonSearch
                         handleSearchTermChange={handleSearchTermChange}
                     />
                 </StyledToolBar>

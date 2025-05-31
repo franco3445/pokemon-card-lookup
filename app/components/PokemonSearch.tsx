@@ -14,7 +14,7 @@ type Props = {
     handleSearchTermChange: () => void;
 };
 
-export default function LiveSearch(props: Props) {
+export default function PokemonSearch(props: Props) {
     const {
         handleSearchTermChange
     } = props;
