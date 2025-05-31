@@ -23,6 +23,9 @@ export default function Index() {
     };
 
     const handleSearchTermChange = async function (event: React.ChangeEvent, value: string): Promise<void> {
+        if (!value) {
+            return;
+        }
         handleToggle();
         setSearchTerm(value);
     };
