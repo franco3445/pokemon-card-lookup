@@ -11,6 +11,7 @@ import {
 import { ChangeEventHandler } from 'react';
 
 import PokemonSearch from '@/app/components/PokemonSearch';
+import SortSearch from '@/app/components/SortSearch';
 
 const StyledToolBar = styled(Toolbar)(({theme}) => ({
     backgroundColor: '#f2c524',
@@ -23,11 +24,13 @@ const StyledTypography = styled(Typography)(({theme}) => ({
 
 type Props = {
     handleSearchTermChange: ChangeEventHandler;
+    handleSortTermChange: ChangeEventHandler;
 };
 
 export default function TopBar(props: Props) {
     const {
         handleSearchTermChange,
+        handleSortTermChange,
     } = props;
 
     return (
@@ -40,6 +43,9 @@ export default function TopBar(props: Props) {
                     >
                         Pokemon Card Look Up
                     </StyledTypography>
+                    <SortSearch
+                        handleSortTermChange={handleSortTermChange}
+                    />
                     <PokemonSearch
                         handleSearchTermChange={handleSearchTermChange}
                     />

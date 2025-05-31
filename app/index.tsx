@@ -12,6 +12,7 @@ import { Card } from '@/app/types/card';
 
 export default function Index() {
     const [ searchTerm, setSearchTerm ] = React.useState('');
+    const [ sortTerm, setSortTerm ] = React.useState('name');
     const [ retrievedCards, setRetrievedCards ] = React.useState<Card[]>([]);
     const [loading, setLoading] = React.useState(false);
 
@@ -30,14 +31,22 @@ export default function Index() {
         setSearchTerm(value);
     };
 
+    const handleSortTermChange = async function (event: React.ChangeEvent, value: string): Promise<void> {
+        handleToggle();
+        setSortTerm(event.target.value);
+    };
+
     useEffect(() => {
-        cardSearch(searchTerm)
+        cardSearch(searchTerm, sortTerm)
             .then(cards => {
                 setRetrievedCards(cards);
             })
             .catch(err => console.log(err))
             .finally(() => handleClose());
-    }, [searchTerm]);
+    }, [
+        searchTerm,
+        sortTerm,
+    ]);
 
     return (
         <Box
@@ -49,6 +58,7 @@ export default function Index() {
         >
             <TopBar
                 handleSearchTermChange={handleSearchTermChange}
+                handleSortTermChange={handleSortTermChange}
             />
             <Backdrop
                 sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}

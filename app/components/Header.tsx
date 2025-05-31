@@ -18,7 +18,6 @@ export default function Header(props: Props) {
     } = props;
 
     const handleClick = () => {
-        console.log(cardName, setName);
         const url = `https://www.google.com/search?q=${cardName}+${setName}`;
         window.open(url, "_blank");
     };
