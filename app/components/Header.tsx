@@ -1,8 +1,5 @@
-import {
-    CardHeader,
-    Grid
-} from '@mui/material';
-import { styled } from "@mui/material/styles";
+import {CardHeader, Grid} from '@mui/material';
+import {styled} from "@mui/material/styles";
 
 type Props = {
     cardName: string;
@@ -20,6 +17,12 @@ export default function Header(props: Props) {
         setName,
     } = props;
 
+    const handleClick = () => {
+        console.log(cardName, setName);
+        const url = `https://www.google.com/search?q=${cardName}+${setName}`;
+        window.open(url, "_blank");
+    };
+
     return (
         <BorderedGrid>
             <CardHeader
@@ -32,6 +35,7 @@ export default function Header(props: Props) {
                     borderRadius: '16px',
                     padding: '.5em'
                 }}
+                onClick={handleClick}
             />
         </BorderedGrid>
     );

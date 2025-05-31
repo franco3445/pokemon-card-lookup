@@ -1,5 +1,5 @@
-import { PokemonTCG } from "pokemon-tcg-sdk-typescript";
-import { allCards } from '@/app/helpers/allCards'
+import {PokemonTCG} from "pokemon-tcg-sdk-typescript";
+import {allCards} from '@/app/helpers/allCards'
 
 export const cardSearch =  async function (term: string) {
     const query = `name:"${term}"`;
