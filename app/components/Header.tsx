@@ -33,6 +33,7 @@ export default function Header(props: Props) {
                     '--Grid-borderWidth': '2px',
                     border: 'var(--Grid-borderWidth) solid',
                     borderRadius: '16px',
+                    cursor: 'pointer',
                     padding: '.5em'
                 }}
                 onClick={handleClick}
