@@ -37,6 +37,18 @@ export default function SortSearch(props: Props) {
                 defaultValue={orderBy[0].value}
                 label={"Sort By"}
                 onChange={handleSortTermChange}
+                sx={{
+                    backgroundColor: 'white',
+                    '& .MuiOutlinedInput-notchedOutline': {
+                        borderColor: 'black',
+                    },
+                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                        borderColor: 'black',
+                    },
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                        borderColor: 'black',
+                    },
+                }}
             >
                 {orderBy.map(label => {
                     return (
