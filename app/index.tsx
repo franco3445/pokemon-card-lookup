@@ -51,9 +51,9 @@ export default function Index() {
     return (
         <Box
             sx={{
-                backgroundImage: 'url(https://i.imgur.com/AZiePHp.jpeg)',
+                backgroundImage: 'url(https://i.imgur.com/yWOp0rH.jpeg)',
                 height: '100%',
-                overflow: 'auto',
+                overflow: 'auto'
         }}
         >
             <TopBar
