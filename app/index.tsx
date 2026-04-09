@@ -51,7 +51,7 @@ export default function Index() {
     return (
         <Box
             sx={{
-                backgroundImage: 'url(https://i.imgur.com/yWOp0rH.jpeg)',
+                backgroundImage: 'url(https://i.imgur.com/444EbWN.jpeg)',
                 height: '100%',
                 overflow: 'auto'
         }}
