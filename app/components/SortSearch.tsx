@@ -12,15 +12,15 @@ type Props = {
 
 const orderBy = [
     {
-        label: 'Name',
+        label: 'Sort By Name',
         value: 'name',
     },
     {
-        label: 'Set Name',
+        label: 'Sort By Set Name',
         value: 'set.name',
     },
     {
-        label: 'Artist',
+        label: 'Sort By Artist',
         value: 'artist',
     },
 ]
