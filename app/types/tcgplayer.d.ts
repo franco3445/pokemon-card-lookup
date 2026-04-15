@@ -5,6 +5,8 @@ export interface TCGPlayer {
         normal?: Price;
         holofoil?: Price;
         reverseHolofoil?: Price;
+        '1stEdition'?: Price;
+        unlimited?: Price;
     };
 }
 export interface Price {

@@ -33,46 +33,38 @@ export default function CardFooter(props: Props) {
         tcgPlayerPrices,
     } = props;
 
-    const normalPrice = assignToDollar(tcgPlayerPrices?.prices?.normal?.market)
-    const reverseHoloPrice = assignToDollar(tcgPlayerPrices?.prices?.reverseHolofoil?.market)
-    const HoloPrice = assignToDollar(tcgPlayerPrices?.prices?.holofoil?.market)
+    const prices = tcgPlayerPrices?.prices || [];
+    const columns = Object.entries(prices).map(()=> {}).length;
 
     return (
         <CardContent>
             <BorderedGrid
-                columns={3}
+                columns={columns}
                 container
                 direction="row"
                 justifyContent="space-evenly"
                 spacing={1}
-            >
-                <CenteredGrid
-                    item
-                    size={1}
-                    key={`normal_price`}
-                >
-                    <Typography variant="h6" component="div" align="center">
-                        Normal: {normalPrice}
-                    </Typography>
-                </CenteredGrid>
-                <CenteredGrid
-                    item
-                    size={1}
-                    key={`rholo_price`}
-                >
-                    <Typography variant="h6" component="div" align="center">
-                        R-Holo: {reverseHoloPrice}
-                    </Typography>
-                </CenteredGrid>
-                <CenteredGrid
-                    item
-                    size={1}
-                    key={`holo_price`}
-                >
-                    <Typography variant="h6" component="div" align="center">
-                        Holo: {HoloPrice}
-                    </Typography>
-                </CenteredGrid>
+            > {Object.entries(prices).map(([key, value]) => {
+                // Pretty straightforward - use key for the key and value for the value.
+                // Just to clarify: unlike object destructuring, the parameter names don't matter here.
+                const convertedLabel = key
+                    .replace(/([A-Z])/g, ' $1') // Insert space before capital letters
+                    .replace(/^./, str => str.toUpperCase()) // Capitalize first letter
+                    .trim();
+
+                return (
+                    <CenteredGrid
+                        item
+                        size={1}
+                        key={key}
+                    >
+                        <Typography variant="h6" component="div" align="center">
+                            {convertedLabel}:<br/>
+                            {assignToDollar(value.market)}
+                        </Typography>
+                    </CenteredGrid>
+                )
+            })}
             </BorderedGrid>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                 Artist: {artist}
