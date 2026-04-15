@@ -11,6 +11,7 @@ import { cardSearch } from '@/app/helpers/search';
 import { Card } from '@/app/types/card';
 
 export default function Index() {
+    const [ searchByTerm, setSearchByTerm ] = React.useState('name');
     const [ searchTerm, setSearchTerm ] = React.useState('');
     const [ sortTerm, setSortTerm ] = React.useState('name');
     const [ retrievedCards, setRetrievedCards ] = React.useState<Card[]>([]);
@@ -31,19 +32,28 @@ export default function Index() {
         setSearchTerm(value);
     };
 
+    const handleSearchByTermChange = async function (event: React.ChangeEvent, value: string): Promise<void> {
+        if (!value) {
+            return;
+        }
+        handleToggle();
+        setSearchByTerm(event.target.value)
+    };
+
     const handleSortTermChange = async function (event: React.ChangeEvent, value: string): Promise<void> {
         handleToggle();
         setSortTerm(event.target.value);
     };
 
     useEffect(() => {
-        cardSearch(searchTerm, sortTerm)
+        cardSearch(searchTerm, sortTerm, searchByTerm)
             .then(cards => {
                 setRetrievedCards(cards);
             })
             .catch(err => console.log(err))
             .finally(() => handleClose());
     }, [
+        searchByTerm,
         searchTerm,
         sortTerm,
     ]);
@@ -57,6 +67,7 @@ export default function Index() {
         }}
         >
             <TopBar
+                handleSearchByTermChange={handleSearchByTermChange}
                 handleSearchTermChange={handleSearchTermChange}
                 handleSortTermChange={handleSortTermChange}
             />
